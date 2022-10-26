@@ -1,4 +1,7 @@
-SELECT * FROM eurovision;
+--1--
+
+
+ELECT * FROM eurovision;
 
 -- Return all columns, restricting the percent of rows returned
 SELECT 
