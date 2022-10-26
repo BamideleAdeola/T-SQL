@@ -27,3 +27,24 @@ FROM
 -- Restrict to rows where the nerc_region is 'RFC'
 WHERE 
   nerc_region = 'RFC';
+
+  -------------------------------------------------------------------
+  --  MIN, MAX, AVG
+  -------------------------------------------------------------------
+   /* Q3 Find the minimum, Maximum and Average value from the affected_customers column, 
+   but only for rows where demand_loss_mw has a value. Name the result min_affected_customers..*/
+
+   -- Find the average number of affected customers
+SELECT 
+  MIN(affected_customers) AS min_affected_customers,
+  MAX(affected_customers) AS max_affected_customers, 
+  AVG(affected_customers) AS avg_affected_customers 
+FROM 
+  grids
+-- Only retrieve rows where demand_loss_mw has a value
+WHERE 
+  demand_loss_mw IS NOT NULL;
+
+    -------------------------------------------------------------------
+  --  STRINGS
+  -------------------------------------------------------------------
