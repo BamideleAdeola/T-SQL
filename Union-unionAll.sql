@@ -40,3 +40,4 @@ SELECT
   'Artist'  AS Source
   -- Complete the FROM statement
 FROM Artist;
+
