@@ -83,7 +83,6 @@ FROM album
 INNER JOIN artist ON album.artist_id = artist.artist_id
 WHERE album.album_id IN (213,214);
 
-
 -----------------------------------------------------------------------
 /* Q6
 To complete the query, join the album table to the track table using the relevant fully qualified album_id column. 
@@ -101,3 +100,5 @@ INNER JOIN artist ON album.artist_id = artist.artist_id
 -- Perform the correct join type to return matches or NULLS from the track table
 INNER JOIN track on track.album_id = album.album_id
 WHERE album.album_id IN (213,214);
+
+--Joins could be INNER JOIN, LEFT JOIN, RIGHT JOIN, UNION, UNION ALL
