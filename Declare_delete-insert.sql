@@ -3,7 +3,6 @@
 -- INSERT, UPDATE, DELCARE AND DELETE RECORDS
 ------------------------------
 
-
 /* Q1
 Create a table called tracks with 2 VARCHAR columns named track and album, 
 and one integer column named track_length_mins. 
@@ -70,7 +69,7 @@ WHERE
 
   ----------------------------
  -- Q2 That's a very long album title, isn't it? Use an UPDATE statement to modify the title to 'Pure Cult: The Best Of The Cult'.
- --------------------------------
+ ------------------------------
   -- Run the query
 SELECT 
   title 
@@ -85,6 +84,7 @@ UPDATE
 SET 
   title = 'Pure Cult: The Best Of The Cult'
 WHERE album_id = 213;
+
 
 -----------------------------
      --  DELETE --
@@ -110,7 +110,7 @@ FROM
 
 
 -----------------------------
-     --  DECLARE YOURSELF --
+     --  DECLARE YOURSELF -- you can declare int or string
 -----------------------------
 
 -- To avoid repetition, create a variable
