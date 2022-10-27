@@ -1,4 +1,8 @@
+-- 8 -- 
+------------------------------
 -- CRUD - CREATE, READ, UPDATE, DELETE
+------------------------------
+
 
 /*-- Q1
 Create a table named 'results' with 3 VARCHAR columns called track, artist, and album,
