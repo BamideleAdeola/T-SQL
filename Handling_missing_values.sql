@@ -27,3 +27,15 @@ SELECT IncidentState, ISNULL(IncidentState, City) AS Location
 FROM Incidents
 -- Filter to only return missing values from IncidentState
 WHERE IncidentState IS NULL;
+
+
+/* Q3
+Replace missing values in Country with the first non-missing value from IncidentState or City, 
+in that order. Name the new column Location.
+*/
+-- Replace missing values 
+SELECT country, COALESCE(Country, IncidentState, City) AS Location
+FROM incidents
+WHERE country IS NULL;
+
+
