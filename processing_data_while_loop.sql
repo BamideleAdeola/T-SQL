@@ -71,3 +71,18 @@ BEGIN
 END
 -- Check the value of the variable
 SELECT @counter AS myvar;
+
+
+
+
+			---------------------------------
+					--  DERIVED TABLES --
+			---------------------------------
+/*
+Query treated like a temporary table
+Always contained within the main query
+Specified in the FROM clause
+Can contain intermediate calculations to be used in the main query or different joins than in the main query
+
+
+*/
