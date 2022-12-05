@@ -1,0 +1,32 @@
+#QUESTION : 
+  /* Write an SQL query to fetch the lower, all capital and first letter capital 
+  letter of first_name field of the voters table. */
+
+Generally speaking, there are three case manipulation functions in SQL, Lower, Upper and Proper. This is from my experience in #Excel. 
+Switching to #SQL, an interview question was specific about using #SQL #Server to return these 3 manipulations.
+You would be amazed Proper which is first letter capital letter is not as straight forward as the remaining 2, atleast to me. 
+In Excel, I can pass Proper and the text, which will return required output.
+However, some RDBMS have direct functions like INITCAP that can solve this challenge. 
+
+My approach below, uses 5 functions to retrieve the output. 
+1. LEFT = Extract the first letter
+2. UPPER = Capitalize the first letter
+3. SUBSTRING = extracts part of a string with start and end parameter. Apparently, the start will be the second character.
+4. LEN = provides the length of a string. This will be the end parameter for the substring
+5. Concat (+) = The + symbol combines the functions.
+
+
+SELECT first_name, 
+	LOWER(first_name) AS lowercase,
+	UPPER(first_name) AS uppercase,
+	UPPER(LEFT(first_name,1)) + SUBSTRING(first_name, 2, LEN(first_name)) AS FirstletterCaps
+FROM voters;
+
+How would you have solved this using your preferred RDMS seeing that this uses SQL Server?
+Trust you find this useful. 
+#Cavaet: #The #data is a sample data.
+#Follow, #share, #comment and #like to help someone somewhere.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
