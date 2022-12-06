@@ -1,0 +1,22 @@
+#QUESTION : 
+/* Write an SQL query to fetch the contactName that begins with any two characters, followed by a text “ab” and ends with any sequence of characters.
+*/
+
+Understanding the underscore symbol of a wildcard is necessary in achieving the above task. 
+A single underscore (_) represents a letter, hence the need to combine 2 underscore in solving the challenge.
+The % symbol matches no or multiple characters.
+Depending on your table structure and challenge, you might want to format your columns either with an UPPER() or LOWER() function. 
+However, that is not needed for this challenge. 
+
+SELECT ContactName
+FROM dbo.Customers
+WHERE ContactName LIKE '__ab%';
+
+How would you have solved this?
+Trust you find this useful. 
+#Cavaet: #The #data is #Northwind database.
+#Follow, #share, #comment and #like to help someone somewhere.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
