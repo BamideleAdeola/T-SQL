@@ -1,0 +1,36 @@
+#QUESTION : 
+/* #Bulk #Insert eurovis.csv located in downloads into a table dbo.eurovis. Remove previous data and load the new dataset*/
+
+Earlier in my career, one of the things I find difficult was bulk loading dataset into #SQL #Server. So I resulted to using management studio to import tables.
+
+When I finally got how it works, I was so delighted and I documented it in my #GitHub account. 
+This challenge helps with two tasks: to truncate and to bulk load. 
+Truncating helps to clear a table leaving its structure intact. And the bulk insert helps to load the datasets from wherever it is stored into the truncated table. 
+
+One thing to note is that you need to use the file path. Most often I use SHIFT + RIGHT CLICK to get the path of my data.
+It is obvious that the data resides in my Downloads then we can specify some #WITH parameter. 
+Format is a CSV and Firstrow begins at row 2 because first row is the header.
+
+QUERY
+-- truncate the table first
+TRUNCATE TABLE dbo.eurovis;
+GO
+ 
+-- import the file
+BULK INSERT dbo.eurovis
+FROM 'C:\Users\User\Downloads\eurovis.csv'
+WITH
+(
+        FORMAT='CSV',
+        FIRSTROW=2
+)
+GO
+
+Have you ever tried this or you intend to try it anytime?
+Trust you find this useful. 
+#Cavaet: #The #data is a sample data.
+#Follow, #share, #comment and #like to help someone somewhere.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
