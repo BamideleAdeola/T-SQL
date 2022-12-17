@@ -1,0 +1,41 @@
+#QUESTION : /* Are the most popular stations to start a trip also the most popular stations to end a trip? 
+Limit to five (5) most populous stations*/
+
+As you journey on mastering best practice in #SQL queries, you would understand the importance of #Common #Table #Expression (CTEs). 
+A common table expression, or CTE, is a temporary named result set created from a simple SELECT statement that can be used in a subsequent SELECT statement
+In English language, we always want to avoid #tautology. We do not have to continue to input same queries in sub queries every other time. 
+Just address it as a common table expression and reference it in main query.
+In solving the above challenge, just create 2 CTEs, one for start station popularity and the other for end station popularity. 
+Popularity itself is about the count placed on start and end station dates. Since COUNT is an aggregate function then we need to group each query by the non aggregate field. 
+
+WITH st_pop AS (
+ SELECT start_station, 
+   COUNT(start_date) AS st_count 
+ FROM CapitalTrips
+ GROUP BY start_station),   -- CTE 1, StartStation_Popularity
+
+ end_pop AS (
+ SELECT end_station,
+   COUNT(end_date) AS end_count
+ FROM CapitalTrips
+ GROUP BY end_station)		-- CTE 2, EndStation_Popularity
+
+SELECT TOP (5)
+  s.start_station AS station,
+  s.st_count AS starts,
+  e.end_count AS ends
+FROM st_pop s
+INNER JOIN end_pop e 
+ON s.start_station = e.end_station
+ORDER BY starts DESC;
+
+From the query output, #YES the most popular stations to start a trip were also the most popular stations to end a trip.
+However, Massachusetts Ave & Dupont Circle NW is the most popular station.
+How would you have achieved this considering query performance?
+Trust you find this useful. 
+#RDBMS: #SQL #Server
+#Follow, #share, #comment and #like to help someone somewhere.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
