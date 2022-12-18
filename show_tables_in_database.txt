@@ -1,0 +1,26 @@
+#QUESTION :/*Retrieve all tables in a database called TestDb*/
+
+Different database management systems have different queries to see all the tables present in a database. 
+Sometimes before querying, you just want to see the different tables in a schema. 
+Below are just how to show the tables in a database from some RDMBS.
+
+Query 1		-- #SQL #SERVER and #PostgreSQL	
+SELECT		
+    *
+FROM Information_schema.tables;
+
+Query 2 	-- #MYSQL
+show tables;
+
+Query 3		-- #ORACLE
+SELECT 
+    table_name
+FROM
+    User_tables;
+
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server / #PostgreSQL
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
