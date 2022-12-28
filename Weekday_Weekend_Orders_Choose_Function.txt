@@ -1,0 +1,36 @@
+#QUESTION : #Retrieve Weekday orders and Weekend Orders From Adventure2019 Database using CHOOSE() FUNCTION.
+
+As a follow-up way of addressing or displaying weekday or weekend orders, the CHOOSE() Function combined with DATENAME and DATEPART can be used to address this challenge.
+
+Still using #AdventureWorks2019 database to solve this challenge, I did a simple test to confirm if Today, November 5th, 2022 in Nigeria is a Weekend or Weekday. 
+
+Your guess is as right as mine. Definitely a weekend
+
+
+--Query 1: Weekend Orders
+
+-- Confirming if today is a weekend or weekday
+SELECT GETDATE() AS Today,
+DATENAME(dw, GETDATE()) AS dayofweek,
+CHOOSE(DATEPART(dw, GETDATE()), 'WEEKEND', 'Weekday',  -- starting a weekend from SUNDAY
+ 'Weekday', 'Weekday', 'Weekday', 'Weekday', 'WEEKEND') AS Workday;
+
+
+--Query 2: Weekday/Weekend Orders
+
+SELECT 
+  s.ModifiedDate AS OrderDate,
+  s.Orderqty AS Orders,
+  DATENAME(dw, s.ModifiedDate) AS DayofWeek,
+  CHOOSE(DATEPART(dw, s.ModifiedDate), 'WEEKEND','Weekday',
+  'Weekday','Weekday','Weekday','Weekday','WEEKEND') AS WorkDay
+FROM Sales.SalesOrderDetail AS s;
+
+
+Trust you find this useful. 
+#Cavaet: There are other ways of solving this. Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
