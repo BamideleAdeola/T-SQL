@@ -1,0 +1,38 @@
+#QUESTION : 
+/*
+Write a query that returns the total points contribution of a teams 
+#Power #Forwards (PF) where their total points contribution is greater than 2000.
+*/
+
+I decided to look into basketball datasets with a keen interest of explaining the concept of #WHERE and #HAVING #Clause.
+There are five (5) positions in #basketball. 
+Shooting guard (SG), point guard (PG), power forward (PF), small forward (SF), and center (C). Each position has a distinct purpose on the court.
+This post is not about explaining individual of these positions but to however, reiterate the importance of #data #specialist making some research. 
+
+I am not totally a fan of #basketball but I had to make some research on these positions and it was interesting. 
+The challenge is fully packed with some key concepts.
+While the WHERE and HAVING clause can return similar output in some cases, you must beware of performance by understanding their specific use case.
+
+The WHERE clause is used as a filter condition on individual rows, in this case, 
+Position = 'PF', and HAVING is used as a numeric filter condition on 
+grouped rows and must be used with an aggregate function, in this case, 
+SUM(TotalPoints) > 2000.
+
+SELECT Team, 
+	SUM(TotalPoints) AS TotalPFPoints
+FROM NbaPlayerStats
+WHERE Position = 'PF'
+GROUP BY Team
+HAVING sum(TotalPoints) > 2000
+ORDER BY TotalPFPoints DESC;
+
+From the above results, although there are several teams with Totalpoints greater than 2000. 
+However, Cleveland Cavaliers must've had some good Power Forwards that season.
+
+Trust you find this useful. 
+#Cavaet: #The #data is a sample data.
+#Follow, #share, #comment and #like to help someone somewhere.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
