@@ -1,0 +1,38 @@
+#QUESTION : /*Create a synonym prod for [TestOrders].[dbo].[products_t], insert into the synonym and confirm the inserted values in products_t table*/
+
+In SQL Server, the synonym is the database object that provides alternate name (alias) 
+to another database objects such as table, view, stored procedure, etc. in the local server or a remote server. 
+It provides a layer of abstraction and protects the client application in case of a name change or location change made to the base object.
+
+Note the following:
+- You need a CREATE SYNONYM permission and either own the schema or have ALTER SCHEMA permission.
+- A synonym must have a unique name just like other database objects in a schema.
+- A synonym cannot be a base object for another synonym.
+- A synonym cannot reference a user -defined aggregate function.
+- Inserting values into the synonym would automatically updates the source table.
+
+
+USE TestOrders;
+GO
+
+CREATE SYNONYM Prod 
+FOR [TestOrders].[dbo].[products_t]
+GO
+
+-- Insert values into the synonym [Prod] 
+INSERT INTO Prod
+VALUES ( 6, 'Blade', 32);
+
+-- To confirm if the update reflects on product table
+SELECT * FROM products_t;
+
+As can be seen, the insert on synonym prod reflects on the product_t table. Again, synonym protects the client application in case of a name change or location change made to the base object.
+Have you used synonyms before or would you love to try it out? 
+
+#Cavaet: Keep #learning as this is not exhaustive. #keep investing in yourself as I am.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
