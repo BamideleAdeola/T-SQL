@@ -1,0 +1,28 @@
+#QUESTION : 
+ /* Write an #SQL #query to replace the first two characters in first_name field of voters table with the string 'Mr. '*/
+
+While there are several ways to achieve the above challenge. I used the STUFF() function here.
+The STUFF() function deletes a part of a string and then inserts another part into the string, starting at a specified position.
+It is used to overwrite existing character or inserts a string into another string. 
+Syntax:
+STUFF(string_expression,start, length, replacement_characters)
+While Stuff and Replace function are closely related, their difference are obvious. 
+
+#STUFF function is used to insert a string into another string by deleting some characters specified.
+On the other hand, #REPLACE instead of replacing specific characters, replaces existing characters of all occurrences.
+
+QUERY
+SELECT 
+	first_name,
+	STUFF(first_name, 1, 2,'Mr. ')
+FROM voters;
+
+What are other use cases you would love to use the Stuff Function?
+How would you have solved this using your preferred RDMS seeing that this uses SQL Server?
+Trust you find this useful. 
+#Cavaet: #The #data is a sample data.
+#Follow, #share, #comment and #like to help someone somewhere.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
