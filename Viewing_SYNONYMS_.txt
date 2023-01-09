@@ -1,0 +1,28 @@
+#QUESTION : /*How do I see the sysnonyms and base_object name of sysnonyms created in a database - TestOrders? */
+
+My last post for 2022 was creating #synonyms in #sql, its benefits and use case. Please read my last post to refresh on how to create a synonym and using synonyms to insert data into the main base object.
+
+However, I got a follow-up question on how to use T-SQL to query the synonyms already created. 
+
+Hence, the need for this short post. Definitely, you can use #SSMS to view synonyms within a database. 
+
+
+USE TestOrders;
+GO
+
+SELECT 
+ name, 
+ base_object_name, 
+ type
+FROM 
+ sys.synonyms
+ORDER BY
+ name;
+
+#Cavaet: Keep #learning as this is not exhaustive. #keep investing in yourself as I am.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
