@@ -1,0 +1,33 @@
+#QUESTION : 
+/*
+Write a query to retrieve column names and data types of the voters table.
+*/
+Have you ever wondered what are the data types of your #Table columns?
+In #SQL, the columns information schema view, which returns information about columns, is an ISO standard view that is supported by most of the major RDBMSs. 
+You can use this view to get information about a column’s data type.
+Most of the major RDBMs also provide other methods for getting column information.
+The queries below are not exhaustible as there are various ways of achieving same output from different RDMS.
+I am using #SQL #Server for this task.
+
+QUERY 1
+SELECT COLUMN_NAME, DATA_TYPE 
+FROM INFORMATION_SCHEMA.COLUMNS 
+WHERE TABLE_NAME = 'voters';
+
+QUERY 2
+exec sp_help voters;
+
+QUERY 3
+SELECT TABLE_NAME,COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, IS_NULLABLE
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'voters'
+
+
+How would you have solved this?
+Trust you find this useful. 
+#Cavaet: #The #data is #fictitious and not a real dataset.
+#Follow, #share, #comment and #like to help someone somewhere.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
