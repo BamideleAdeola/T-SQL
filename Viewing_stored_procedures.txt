@@ -1,0 +1,30 @@
+#QUESTION : /* List all Stored Procedures present in a database called TestDb and their object definitions*/
+
+Definitely some stored procedures might have been created in our database. How do you view them? 
+Using SSMS, do the following: 
+1. Expand programmability
+2. Expand Stored Procedure
+Then you will see the list of your SP. However, what if you intend to see the content in your stored procedure? Then proceed to steps 3. 
+
+3. Right click on the stored procedure and select Script Stored Procedure as | CREATE To | New Query Editor Window
+
+Also, you can view your stored procedures using T-SQL codes in different ways. See some of the codes I use to view SP in my database.
+ 
+What works best for me in retrieving names and definitions of the procedures is calling OBJECT_DEFINITION from sys.objects.
+
+-- Retrieve only the name and stored procedure
+SELECT 
+ name AS Procedures, 
+ object_definition(object_id) AS [Procedure Definition]
+FROM sys.objects 
+WHERE type='P';
+
+Please go through the screenshots. I know it's a lot but this is my last write up on stored procedures at least for this year.
+
+#Cavaet: Keep #learning as this is not exhaustive. #keep investing in yourself as I am.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
