@@ -1,0 +1,42 @@
+#QUESTION : 
+/* Retrieve all IDs excluding IDs that are present in table1 and table1*/
+
+One of my friends was posed with the above challenge and I thought to share. 
+There were 2 tables of IDs. Table1 has 0 - 6 and table 2 has 5 - 10 and the interviewer requested a single column excluding rows with common IDs. 
+This is real sense means since 5 and 6 appeared in both table, the output should exclude them totally.  
+
+In solving this challenge, I have declared 2 temporary table with the necessary data. There are 3 queries presented here with same output for learning purposes. 
+
+I am certain you can find other ways of solving this challenge. 
+
+QUERY 1: Uses a subquery where you combine the tables with UNION ALL (Including duplicates) then with a group by and 
+having clause to exclude those with duplicates (5 and 6 would be excluded with the having clause).
+
+SELECT ID 
+FROM (SELECT ID FROM @MyFirstTable
+	  UNION ALL 
+	  SELECT ID FROM @MySecondTable) subquery
+GROUP BY ID
+HAVING COUNT(*) = 1;
+
+QUERY 2: Using the EXCEPT SET allows only unique IDs from A and B, then B and A. Union would definitely removes duplicate.
+
+(SELECT ID FROM @MyFirstTable EXCEPT SELECT ID FROM @MySecondTable)
+UNION
+(SELECT ID FROM @MySecondTable EXCEPT SELECT ID FROM @MyFirstTable);
+
+QUERY 3: This uses union in the first select and intersect in the second select and combined both with Except. 
+The select select after the EXCEPT clause would return 5 and 6 since that is the intersect between the 2 tables. 
+
+(SELECT ID FROM @MyFirstTable UNION SELECT ID FROM @MySecondTable)
+EXCEPT
+(SELECT ID FROM @MyFirstTable INTERSECT SELECT ID FROM @MySecondTable);
+
+How would you have solved this?
+Trust you find this useful. 
+#Cavaet: #The #data was declared as a temporary table.
+#Follow, #share, #comment and #like to help someone somewhere.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
