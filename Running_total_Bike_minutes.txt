@@ -1,0 +1,33 @@
+#QUESTION :/* Retrieve a running total of minutes spent on capital bike trips per day.*/
+
+I am excited about #ChatGPT and I felt to look into how to use it in solving some #SQL Queries. 
+Like the above question on running total. All I did was ask how to code running total in #SQL #Server.
+Gbam, It answers questions and also writes narrations/essays too. 
+ 
+ChatGPT is a prototype artificial intelligence chatbot developed by OpenAI which specializes in dialogue. 
+The chatbot is a large language model fine-tuned with both supervised and reinforcement learning techniques. 
+It is based on OpenAI's GPT-3.5 model, an improved version of GPT-3.
+
+ChatGPT was launched in November 2022 and has garnered attention for its detailed responses and articulate answers, 
+although its factual accuracy has been criticized.
+
+At least, query samples were returned with some explanations. 
+Running total is a cumulative summation of a column and #Window function helps in achieving this.
+
+
+SELECT
+ start_station,
+ Start_date,
+ Duration,
+ SUM(Duration) OVER (ORDER BY Start_date
+   ROWS BETWEEN UNBOUNDED PRECEDING 
+      AND CURRENT ROW) AS running_total
+FROM CapitalTrips;
+
+Trust you find this useful. 
+#RDBMS: #SQL #Server
+#Follow, #share, #comment and #like to help someone somewhere.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
