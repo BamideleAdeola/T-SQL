@@ -1,0 +1,31 @@
+#PROBLEM STATEMENT:
+Given a table mytree, which is a Binary Search Tree 
+consisting of two columns Node (N) and Parent (P). Write a query 
+that returns the node type ordered by the value of nodes in ascending order. 
+
+There are 3 types.
+Root — if the node is a root
+Leaf — if the node is a leaf
+Inner — if the node is neither root nor leaf.
+
+A quick glance shows that if a given node N has its corresponding P-value as NULL it is the root. 
+And for a given Node N if it exists in the P column it is not an inner node. 
+Hence, we commence the query with a CASE Statement to capture all the above condition.
+Also, we can use the CONCAT with the node to combine with its corresponding label.
+
+SELECT CASE
+    WHEN P IS NULL THEN CONCAT(N, ' Root')
+    WHEN N IN (SELECT DISTINCT P FROM mytree) THEN CONCAT(N, ' Inner')
+    ELSE CONCAT(N, ' Leaf') 
+    END AS Node_Type
+FROM mytree
+ORDER BY N ASC;
+
+How would you have solved this?
+Trust you find this useful. 
+#Cavaet: #The #data was created in #SSMS.
+#Follow, #share, #comment and #like to help someone somewhere.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
