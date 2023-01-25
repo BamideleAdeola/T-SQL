@@ -1,0 +1,25 @@
+#QUESTION : /*Demonstrate the difference amongst Round, Floor and Ceiling in #SQL*/
+
+I got a question from a student and thought to share. He asked how to convert 248774 to 249000. 
+From the above, it means rounding off the value to the nearest thousand in mathematical terms. 
+The ROUND function in SQL is used to round a given number to the nearest integer or to a certain decimal place. 
+Close to the round function are the duo: Ceiling and Floor functions. 
+
+CEILING: It evaluates a value and return the smallest integer greater than, or equal to, the specified numeric expression. This excludes decimal points.
+FLOOR: Returns the #LARGEST smallest integer greater than, or equal to, the specified numeric expression.
+
+SELECT 
+ROUND(248774, -3) AS round_no_5above,	--5-9 rounded up as 1  
+ROUND(248374, -3) AS round_no_below_5;	--0-4 is rounded down as 0
+
+SELECT 
+CEILING(547.34)	AS Ceiling_Value,	-- Approximates upwards
+FLOOR(547.34) AS Floor_value;		-- Removes decimal values and return the integer values
+
+#Cavaet: Keep #learning as this is not exhaustive.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
