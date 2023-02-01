@@ -1,0 +1,47 @@
+#QUESTION : 
+ /*
+Write SQL Query to get the actual price of product (ListPrice + 20% GST) with Product_name and ProductNumber for all products who have product name not starting with A AND product_id must be greater than or equal to 316
+And Listprice is not 0. Sort your result with Product_name
+*/
+
+Here is another interview question which I have tried to attempt solving using AdventureWordks2012 Database. 
+No doubt that understanding percentage increase or decrease can help in solving this question. 
+By normal standard one would want to first divide 20/100 = 0.2, then multiply by listprice to get the equivalent 20% of price. 
+However, we still need to add this value back to price to get the new price. In all these divisions, the data is not neatly formated, 
+hence the need for CAST, Convert, etc function. 
+
+My second approach right from the elementary mathematics class would be to just add 20% + 100% since we are increasing price value and multiple it to price. 
+i.e 120% ^ price. which is 1.2 * listPrice, then wrap in a CAST() Function. 
+
+Which of the two approach would you have rather go for?
+
+-- Query 1
+SELECT  
+	ProductID, 
+	Name As ProductName,
+	ListPrice,
+	CAST(((0.20 * listPrice) + listPrice) AS DECIMAL(6,2))  AS Actual_price
+FROM Production.Product
+WHERE Name not Like 'A%'
+ AND ProductID >= '316'
+ AND listPrice != 0
+ORDER BY ProductID ASC;
+
+-- Query 2 (multiply price by 1.20) which is 120%
+SELECT  
+	ProductID, 
+	Name As ProductName,
+	ListPrice,
+	CAST((1.2 * listPrice) AS DECIMAL(6,2)) AS Actual_price
+FROM Production.Product
+WHERE Name not Like 'A%'
+ AND ProductID >= '316'
+ AND listPrice > 0
+ORDER BY ProductID ASC;
+
+Trust you find this useful. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
