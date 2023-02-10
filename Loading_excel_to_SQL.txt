@@ -1,0 +1,26 @@
+#QUESTION : /*Using a table user-defined function retrieve voters who are born in 1990 from the voters table*/
+
+If you have an excel file and it is seeming difficult to import it into #Microsoft #SQL #database may be because of 32/64 bit issues, then you can 
+SQL Server Import and Export Data app. I am using SQL Server 2019 and Import and Export Data engine came with the server installation. 
+
+Previously, I would always want to convert to csv or find a way to create a table and columns within SQL before importing the data. 
+
+This approach worked for me after some research and I taught to share. 
+
+
+
+
+
+
+
+Please should you have a better approach feel free to put it in the comment box
+
+
+Also note that the data is a fictitious data.
+#Cavaet: Keep #learning as this is not exhaustive.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
