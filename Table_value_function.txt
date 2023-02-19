@@ -1,0 +1,38 @@
+#QUESTION : /*Using a table user-defined function retrieve voters who are born in 1990 from the voters table*/
+
+One of the types of user-defined functions is a Table Value Function. A table-valued function returns a tabular data.
+This is somewhat an opposite to a scalar function which returns single value.
+
+Before SQL 2000, User Defined Functions (UDFs), were not available. Stored Procedures were often used in their place.
+
+One of the advantages of User Defined Functions over Stored Procedures, 
+is the fact that a UDF can be used in a #Select, #Where, or #Case #statement. 
+They also can be used to create joins. In addition, User Defined Functions are simpler to invoke than Stored Procedures from inside another SQL statement.
+
+Disadvantage of User-defined function
+1. It can't be used to modify base table. DML statements such as INSERT, UPDATE and DELETE cannot be used on the base tables.
+2. SQL functions that return non-deterministic values are not allowed  to be called from inside UDF. e.g GETDATE() is an example of non-deterministic function.
+
+The RETURNS TABLE specifies that the function will return a table. This is strictly for learning purposes and might not be the best with regards to performance.
+
+CREATE FUNCTION votersDOB (
+	@YEAR INT)
+RETURNS TABLE
+AS
+RETURN
+  SELECT * FROM 
+  voters
+  WHERE YEAR(birthdate) = @YEAR
+  GO
+
+SELECT * FROM dbo.votersDOB(1990);
+
+
+Also note that the data is a fictitious data.
+#Cavaet: Keep #learning as this is not exhaustive.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
