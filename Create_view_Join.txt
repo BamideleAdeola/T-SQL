@@ -1,0 +1,40 @@
+#QUESTION : /*Create a view with a simple JOIN clause*/
+
+A view acts as a filter on the underlying tables referenced in the view. 
+The query that defines the view can be from one or more tables or from other views in the current or other databases.
+
+Using #SQL Server, there are 3 types of views:
+1. Indexed Views - This means the view definition has been computed and the resulting data stored just like a table
+2. Partitioned Views - A partitioned view joins horizontally partitioned data from a set of member tables across one or more servers
+3. System Views - System views expose catalog metadata. You can use system views to return information about the instance of SQL Server or the objects defined in the instance.
+
+Please read the documentations here >>> https://learn.microsoft.com/en-us/sql/relational-databases/views/views?view=sql-server-ver16
+Some query complexities can be wrapped in a view for stakeholders to just call a simple query without necessarily understanding the underlining complexities.  
+
+A view can serve as a security mechanism by allowing users to access data through the view, without granting the users permissions to directly access the underlying base tables. 
+Starting up with a view that joins two tables Using AdventureWorks2012 as seen below: 
+
+USE AdventureWorks2012;   
+GO  
+
+CREATE VIEW HumanResources.vvEmployeeHireDate  
+AS  
+SELECT p.FirstName, p.LastName, e.HireDate  
+FROM HumanResources.Employee AS e 
+JOIN Person.Person AS  p  
+ON e.BusinessEntityID = p.BusinessEntityID ;   
+GO  
+
+-- Querying the created view  
+SELECT FirstName, LastName, HireDate  
+FROM HumanResources.vvEmployeeHireDate  
+ORDER BY LastName; 
+
+
+#Cavaet: Keep #learning as this is not exhaustive. #keep investing in yourself as I am.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

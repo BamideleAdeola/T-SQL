@@ -1,0 +1,23 @@
+#QUESTION : /* Delete the field company from the ratings_dump table */
+
+If you are a fan of #SQL, you should be familiar with languages such as DDL and DML.
+DDL is Data Definition Language which is used to define data structures. For example: create table, alter table, rename, etc
+DML is Data Manipulation Language which is used to manipulate data itself. For example: insert, update, delete, merge, etc
+
+To answer the above question, we will use the ALTER STATEMENT which is a DDL. Then we will give the name of the table, 
+and the keywords DROP COLUMN and finally give the name of the column which we would want to remove.
+
+
+Query 1		-- #SQL #SERVER
+ALTER TABLE ratings_dump
+DROP COLUMN company;
+
+SELECT * FROM ratings_dump;
+    User_tables;
+
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

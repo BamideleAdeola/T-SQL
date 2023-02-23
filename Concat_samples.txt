@@ -1,0 +1,27 @@
+#QUESTION : /*Query all firstnames immediately followed by the first letter in 
+the last_name column enclosed in parenthesis.*/
+
+As a data specialist, you would have to deal with string function at some point in your data journey. 
+Since the above challenge asked to combine the first_name and lastname, we can use CONCAT() function. 
+We also need to have only one letter inside the parenthesis. Hence we can use the LEFT() and CONCAT based on the requirement.
+Or SUBSTRING and pass the column name, start index, end index. 
+Since the first letter is required, we will pass 1,1(start index is inclusive and the end index is not inclusive). 
+
+--QUERY 1	-- using CONCAT and LEFT
+SELECT
+ CONCAT(first_name,' (', LEFT(last_name,1), ')')
+FROM voters;
+
+--QUERY 2 	-- using CONCAT and SUBSTRING
+SELECT
+ CONCAT(first_name,' (', SUBSTRING(last_name, 1,1), ')')
+FROM voters;
+
+How would you have solved this?
+Trust you find this useful. 
+#Cavaet: #The #data is a sample data.
+#Follow, #share, #comment and #like to help someone somewhere.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

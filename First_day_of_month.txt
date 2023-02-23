@@ -1,0 +1,34 @@
+#QUESTION : 
+ /* Retrieve the First day of month of the StartDate Column in CapitalBikeShare Table */
+
+#As a data specialist and most especially a lover of #SQL, you will definitely have to deal with Date manipulation.
+The DATEADD, DATEDIFF, DATEPART, DATENAME, etc would be of help here. 
+I have loaded the CapitalBikeShare dataset into my SQL Server Management Studio and intend to return first day of the month of the StartDate column. 
+
+When using a nested function as below, the query runs from the innermost function outwards.
+So the DATEDIFF() before the DATEADD. 
+
+Note that calculating the difference in months between StartDate and 0 would return difference between 1/1/1900 (the begin date for SQL) and StartDate in months.
+Add 0 months to that difference to get the first day of the month.
+
+QUERY 1
+SELECT 
+	StartDate, 
+	DATEADD(month, DATEDIFF(month, 0, StartDate), 0) AS first_Day_of_the_month
+FROM dbo.CapitalBikeShare;
+
+
+This can also be used to retrieve the first day of the current month as seen below: 
+QUERY 2
+-- First day of the current month
+SELECT DATEADD(month, DATEDIFF(month, 0, GETDATE()), 0) AS First_day_of_this_month;
+
+How would you have solved this?
+
+Trust you find this useful. 
+#Cavaet: #The #data is #fictitious and not a real dataset.
+#Follow, #share, #comment and #like to help someone somewhere.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

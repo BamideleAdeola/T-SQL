@@ -1,0 +1,40 @@
+#QUESTION : /*Demonstrate what happens when the source table of a view is dropped*/
+
+Again, View is simply subset of table which are stored logically in a database. 
+Hence, a view is a virtual table in the database whose contents are defined by a query. 
+However, while there are several benefits for creating a view in #SQL, here are some of the major set backs.
+
+- Performance: Views create the appearance of a table, but the DBMS must still translate queries against the view into queries against the underlying source tables. 
+If the view is defined by a complex, multi-table query then simple queries on the views may take considerable time.
+
+- Update restrictions
+When a user tries to update rows of a view, the DBMS must translate the request into an update on rows of the underlying source tables. 
+This is possible for simple views, but more complex views are often restricted to read-only.
+
+- When a table is dropped, automatically, views will be affected since it is linked to a table.
+
+- Parameters cannot be passed
+
+- Order by is a NO-NO in creation of views without specifying FOR XML, OFFSET, or TOP
+
+- The Views cannot be created based on Temporary Tables in SQL Server
+
+Are you aware of other disadvantage of creating a view? Drop a comment please.
+
+CREATE VIEW vtest AS		
+SELECT * FROM ratings_dump
+WHERE company_location = 'France';
+
+SELECT * FROM vtest;	  -- There is output here because the underlining table is active
+
+DROP TABLE ratings_dump;  -- Drop the attached ratings_dump table
+
+SELECT * FROM vtest;	  -- Invalid Object name 'ratings_dump'
+
+#Cavaet: Keep #learning as this is not exhaustive. #keep investing in yourself as I am.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

@@ -12,7 +12,7 @@ and IncidentState columns where IncidentState is not missing.
 
 -- Return the specified columns
 SELECT IncidentDateTime, IncidentState
-FROM Incidents
+FROM incidents
 -- Exclude all the missing values from IncidentState  
 WHERE IncidentState IS NOT NULL;
 

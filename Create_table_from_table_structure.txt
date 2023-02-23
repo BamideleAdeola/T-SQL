@@ -1,0 +1,27 @@
+#QUESTION :/* Write an SQL query to create a ratings_dump #table with data & structure copied from ratings table.*/
+
+Have you ever wondered how to clone a table or make a copy of a table to test your queries or something similar?
+Creating a copy of a table is very simple in #SQL but you must know how it works in your #RDBMS. 
+
+In SQL Server, it would amazed that with just a SELECT INTO clause, you can achieve this.
+
+Query 1
+SELECT * INTO ratings_dump
+FROM ratings;
+
+You do not need to create a separate table from the above code. While in #PostGreSQL, the below code works
+
+Query 2
+CREATE TABLE newfortune500 AS
+SELECT *
+FROM fortune500;
+
+Copying query 2 on #SQL Server returns error. Hence, be familiar with your RDBMS #Syntax. 
+I know there are several ways to clone a table. What is the best way you accomplish this?
+
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server / #PostgreSQL
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

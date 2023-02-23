@@ -1,0 +1,27 @@
+#QUESTION : 
+/* Write an SQL query to fetch the position of a in first_name field of the voters table. 
+   Retrieve only instance where a occurs in your output.*/
+
+
+A good function to also be aware of in the string manipulation box is CHARINDEX. This searches for a substring in a string and returns a position. 
+Note that if the substring is not found, then 0 is returned. Also, it is not case-sensitive. 
+a and A is seen as same.
+
+On the above challenge using SQL Server, We pass a to be searched in firstname and stored it as position_of_a. 
+
+Note, without the start option, CHARINDEX starts searching from the first character from the left.
+
+Adding a WHERE CLAUSE to sieve out all instances of 0 to retrieve the required outcome.
+
+SELECT first_name, CHARINDEX('a' , first_name) AS position_of_a
+FROM voters
+WHERE CHARINDEX('a' , first_name) != 0;
+
+How would you have solved this using your preferred RDMS?
+Trust you find this useful. 
+#Cavaet: #The #data is a sample data.
+#Follow, #share, #comment and #like to help someone somewhere.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

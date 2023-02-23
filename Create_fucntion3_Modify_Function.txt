@@ -1,0 +1,36 @@
+#QUESTION : /*Modify an existing function dbo.votesfn to remove 10% from total votes field in the voters table*/
+
+Imagine that you have created a user-defined fucntion and you intend to modify it so as to meet the changing business requirements.
+
+Instead of creating a new column with 10% increase, you intend to subtract 10% from the total votes. 
+
+You can use one of the following functions:
+a. ALTER: This helps to modify an existing function
+b. CREATE OR ALTER: This checks if the function exists, then it alter it. However, if it doesn't, then it creates it.
+
+I love to use the CREATE OR ALTER function because of its flexibility. 
+
+Hence, using our previous percentage increase experience, instead of adding the percentage, we will subtract it.
+
+CREATE OR ALTER FUNCTION dbo.votesfn (@votes INT, @Percent INT)
+RETURNS INT AS
+BEGIN
+	RETURN @votes - (@votes * @Percent)/100
+END
+GO
+
+
+SELECT * , 
+  dbo.votesfn(total_votes, 10) AS Ten_Percent_Minus,
+  dbo.votesfn(total_votes, 5) AS Five_Percent_Minus
+FROM voters
+GO
+
+Also note that the data is a fictitious data. 
+#Cavaet: Keep #learning as this is not exhaustive.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

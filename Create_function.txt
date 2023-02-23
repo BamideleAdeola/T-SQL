@@ -1,0 +1,19 @@
+#QUESTION : /*Create an index view to retrieve total sales and total transactions from ProdTransaction and products_t table*/
+
+If your scripts use the same set of SQL statements repeatedly then this can be converted into a function in the database.
+There is a similarity between functions in SQL Server and other programming languages functions.
+A user-defined function is a Transact-SQL or common language runtime (CLR) routine that accepts parameters, performs an action, 
+such as a complex calculation, and returns the result of that action as a value. 
+The returned value can either be a scalar (single) value or a table. 
+
+
+
+
+
+#Cavaet: Keep #learning as this is not exhaustive. #keep investing in yourself as I am.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

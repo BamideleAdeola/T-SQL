@@ -1,0 +1,55 @@
+#QUESTION : /*Create a stored procedure of one dynamic parameter from the voters table*/
+
+As a follow up on previous post on Stored Procedure. Remember, stored procedures are a batch of SQL statements that can be executed in a couple of ways. 
+Most major DBMs support stored procedures; however, not all do. You will need to verify with your particular DBMS help documentation for specifics. 
+I am using #SQL #Server for this.
+
+SP are also good for calculations/data manipulation/report data sources in the Database.
+
+Here are some of the benefits of SP:
+1. Reusability
+2. Security
+3. Reduces network traffic
+4. Better Performance
+
+Stored procedures can also take parameters. This post will use a single dynamic parameter.
+
+Also, when you use SET NOCOUNT ON, the message that indicates the number of rows that are affected by the T-SQL statement 
+is not returned as part of the results. When you use SET NOCOUNT OFF; the count is returned. Using SET NOCOUNT ON can 
+improve performance because network traffic can be reduced.
+
+Your select statement can go into the BEGIN and END block for a clean code.
+
+-- Stored procedure with a single parameter without SET NOCOUNT Condition
+CREATE PROCEDURE voters_vote(@min_vote AS INT)
+AS
+BEGIN		
+  SELECT first_name, gender, country, total_votes
+  FROM voters
+  WHERE total_votes >= @min_vote					
+  ORDER BY total_votes DESC
+END;		
+
+EXEC voters_vote 100
+
+
+-- Stored procedure with a single parameter with NOCOUNT Condition
+CREATE PROCEDURE least_vote(@min_vote AS INT)
+AS
+SET NOCOUNT ON  
+BEGIN
+  SELECT first_name, gender, country, total_votes
+  FROM voters
+  WHERE total_votes >= @min_vote
+  ORDER BY total_votes DESC
+END;
+
+EXEC least_vote 100;
+
+#Cavaet: Keep #learning as this is not exhaustive.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

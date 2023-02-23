@@ -1,0 +1,45 @@
+#QUESTION : /*Create an index view to retrieve total sales and total transactions from ProdTransaction and products_t table*/
+
+If your data doesn't change too frequently such as #OLAP (Online Analytical Processing) system, then a view is important. However, to even make a view perform better, an index is necessary. 
+The first index created on a view must be a unique clustered index. After the unique clustered index has been created, you can create more nonclustered indexes. 
+Creating a unique clustered index on a view improves query performance because the view is stored in the database in the same way a table with a clustered index is stored. 
+The query optimizer may use indexed views to speed up the query execution. 
+The view doesn't have to be referenced in the query for the optimizer to consider that view for a substitution.
+
+Some conditions for creating an index view:
+1. User-defined functions referenced in the view must be created by using the WITH SCHEMABINDING option.
+2. Aggregate expression should not be null. 
+3. The user that executes CREATE INDEX must be the owner of the view.
+4. The view must reference only base tables that are in the same database as the view. The view can't reference other views.
+5. If GROUP BY is present, the VIEW definition must contain COUNT_BIG(*) and must not contain HAVING. 
+   These GROUP BY restrictions are applicable only to the indexed view definition. A query can use an indexed view in its execution plan even if it doesn't satisfy these GROUP BY restrictions.
+6. Base tables should be referenced with 2 part name (i.e The schema name and table name. dbo.ProdTransaction)
+
+To view the full documentation on creating an index view, please visit here https://learn.microsoft.com/en-us/sql/relational-databases/views/create-indexed-views?view=sql-server-ver16
+
+CREATE VIEW vProductTotalSales
+WITH SCHEMABINDING
+AS
+SELECT Name, 
+  SUM(ISNULL((QtySold * UnitPrice),0)) AS TotalSales,
+  COUNT_BIG(*) AS TotalTransactions
+FROM dbo.ProdTransaction
+JOIN dbo.products_t
+ON dbo.ProdTransaction.ProductID = dbo.products_t.ProductID
+GROUP BY Name;
+
+SELECT * FROM vProductTotalSales;
+
+CREATE UNIQUE CLUSTERED INDEX UCI_vProductTotalSales_Name
+ON vProductTotalSales (Name);
+
+
+Just to state also that the cost of maintaining an index view is more than table view. This is because mostly index view are used in a Data Warehouse environment Rather than in an #OLTP (Online Transaction Processing) system
+
+#Cavaet: Keep #learning as this is not exhaustive. #keep investing in yourself as I am.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

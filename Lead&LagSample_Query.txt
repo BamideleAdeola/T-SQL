@@ -1,0 +1,38 @@
+#QUESTION : 
+/*
+Write a query that retrieves annual sum of total votes side by side previous year and next year.
+And their differences.
+*/
+
+In the business world, you would always want to compare current sales with previous sales to make an informed decision of your sales pipeline or performance. 
+#SQL #Lead and #Lag function helps to achieve this comparison. 
+
+The LEAD function is used to access data from SUBSEQUENT rows along with data from the current row.
+The LAG function is used to access data from PREVIOUS rows along with data from the current row.
+An ORDER BY clause is required both functions, however a PARTITION BY clause is optional.
+From the above challenge, a subquery that sums the votes would be executed before the window function.
+
+To ascertain the annual sum of total votes, it means we have to group the sum by year. That was achieved in the subquery.
+
+
+SELECT 
+ vote_year,
+ sum_total_vote,
+ LAG(sum_total_vote) OVER (ORDER BY sum_total_vote) AS lag,
+ LEAD(sum_total_vote) OVER (ORDER BY sum_total_vote) AS lead,
+ sum_total_vote - LAG(sum_total_vote) OVER (ORDER BY sum_total_vote) AS lag_difference,
+ LEAD(sum_total_vote) OVER (ORDER BY sum_total_vote) - sum_total_vote AS lead_difference
+FROM (
+	SELECT YEAR(first_vote_date) AS vote_year,
+	   SUM(total_votes) AS sum_total_vote
+FROM voters 
+GROUP BY YEAR(first_vote_date)) sub;
+
+How would you have solved this?
+Trust you find this useful. 
+#Cavaet: #The #data is #fictitious and not a real dataset.
+#Follow, #share, #comment and #like to help someone somewhere.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

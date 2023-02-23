@@ -1,0 +1,34 @@
+#QUESTION : /* Create a Stored Procedure with an output parameter of total sum of votes with an input of country*/
+
+As a further conversation on Stored Procedure, one can also Create a stored procedure with an output parameter
+By default, all the parameters are INPUT parameters in any stored procedure unless suffix with OUTPUT keyword.
+To call a stored procedure with an output parameter, one needs to declare an output variable (you can also use SET clause).
+Some developers love to use the #Print function or #Select clause to call the output parameter. 
+
+CREATE PROCEDURE GetVotersDetails2
+@country VARCHAR(50),
+@TotalVote INT OUTPUT  --output parameter
+
+AS
+BEGIN
+ SELECT @TotalVote = SUM(total_votes) FROM voters 
+ WHERE country = @country
+END;
+
+--Query 1
+DECLARE @tvote INT				--You have to declare the output parameter here before executing SP
+EXEC GetVotersDetails2 'USA', @tvote OUT	-- You can either call it out or output
+PRINT @tvote					-- Print the declared variable to call the output
+
+--Query 2
+DECLARE @tvote INT							
+EXEC GetVotersDetails2 'Denmark', @tvote OUT	
+SELECT @tvote	AS sum_of_Denmark_votes		-- You can also use select statement to call the output	
+
+#Cavaet: Keep #learning as this is not exhaustive.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

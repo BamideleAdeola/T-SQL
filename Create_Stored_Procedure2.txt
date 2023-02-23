@@ -1,0 +1,29 @@
+#QUESTION : /*Create a stored procedure with a default parameter total_votes of 145 from the voters table*/
+
+If you intend to find out about benefits of Stored Procedure, please check my previous post here>>> 
+https://www.linkedin.com/posts/bamideleajamu_question-sql-server-activity-7010918144613462016-88yA?utm_source=share&utm_medium=member_desktop
+
+Here, the challenge is to create an SP with a default parameter. If you add a parameter when creating a stored procedure, 
+you can provide a default value so that the execution statement is not required to pass input value to this parameter.
+You can execute this without a parameter and it would returned the default parameter or you can call it by specifying a different parameter.
+
+CREATE PROCEDURE Voters_withDefaultParameters(@vta AS INT = 145) --default of 145
+AS
+SET NOCOUNT ON  
+BEGIN
+  SELECT first_name, gender, country, total_votes
+  FROM voters
+  WHERE total_votes = @vta					
+  ORDER BY total_votes DESC
+END;
+
+EXEC Voters_withDefaultParameters;	-- This returns total_vote = 145 (Since 145 is the default parameter)
+EXEC Voters_withDefaultParameters 110;	-- Specifying a parameter different from the default
+
+#Cavaet: Keep #learning as this is not exhaustive.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

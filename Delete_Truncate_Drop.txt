@@ -1,0 +1,29 @@
+#QUESTION : 
+  /* Are there any difference amongst #DELETE, #TRUNCATE, & #DROP?.*/
+
+I get this question frequently, to differentiate amongst the trio - #DELETE, #TRUNCATE & #DROP. 
+Let me use a simple meme to explain this. 
+
+#DELETE: I am delete, I regard myself as more important than the rest because you can use me to remove specific rows or columns of interest with a #WHERE clause.
+Also, without a WHERE Clause, I can delete all records in a table. Although, performance issue might set in here.
+  DELETE FROM Orders
+  WHERE OrderID = 5;
+
+OR
+
+DELETE FROM Orders;  -- Note that this has performance issue, just use Truncate instead.
+
+#TRUNCATE: Really? What if you need to remove entire datasets without removing the structure (the columns and Table) and still have good performance? I, #TRUNCATE makes life easier at just a click.
+  TRUNCATE TABLE Orders;
+
+#DROP: Hmmm. Have you guys forgotten that most times, the entire table needs to be removed (table, data and columns inclusive)? This is where I, #DROP just drop it off.
+  DROP TABLE Orders;
+
+In all, None of these trio supersedes the other. It is all about your business case. And what you intend to achieve.  
+I left some use case out, can you help provide anyone too?
+Trust you find this useful. 
+#Follow, #share, #comment and #like to help someone somewhere.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

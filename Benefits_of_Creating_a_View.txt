@@ -1,0 +1,39 @@
+#QUESTION : /* Create a view to store matches played in 2011 from eurovis tables*/
+
+A database VIEW is a named SELECT statement. 
+Other database users may run this VIEW without understanding the SELECT statement’s advanced SQL. 
+In simple terms, it is an alias for a hard to write SELECT statement. 
+A view can be created from single or multiple tables.
+
+A view provides several benefits.
+1. Views can hide complexity:
+If you have a query that requires joining several tables, 
+or has complex logic or calculations, you can code all that logic into a view, 
+then select from the view just like you would a table.
+
+2. Views can be used as a security mechanism
+A view can select certain columns and/or rows from a table (or tables), 
+and permissions set on the view instead of the underlying tables. 
+This allows surfacing only the data that a user needs to see.
+
+3. Views can simplify supporting legacy code
+If you need to refactor a table that would break a lot of code, you can replace the table with a view of the same name. 
+The view provides the exact same schema as the original table, while the actual schema has changed. 
+This keeps the legacy code that references the table from breaking, allowing you to change the legacy code at your leisure.
+It also helps provide logical data independence the fact that you can provide an interface to the DB independent of the underlying logical database is a very powerful concept.
+
+What other benefits can you propose for using creating a view?
+
+ CREATE VIEW Matches_2011 AS
+  SELECT * FROM eurovis
+  WHERE EventYear = 2011;
+
+  SELECT * FROM Matches_2011;	-- Display the data in a view
+
+#Cavaet: Keep #learning as this is not exhaustive. #keep investing in yourself as I am.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

@@ -1,0 +1,22 @@
+#QUESTION :/* Write an SQL query to create a Blank_table using ratings table structure.*/
+
+As a follow up to cloning a table, you could be interested in just creating a new table from the structure of another table without the data.
+Adding a WHERE CLAUSE can do justice to the above challenge. This is useful if you do not want to be creating a new table all over.
+
+Query 1		-- #SQL #SERVER
+SELECT * INTO Blank_table
+FROM ratings;
+WHERE 1=0;
+
+
+Query 2			-- #PostgreSQL
+CREATE TABLE Blank_table
+SELECT * FROM ratings 
+WHERE 1=0;
+
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server / #PostgreSQL
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

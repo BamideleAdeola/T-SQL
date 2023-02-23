@@ -1,0 +1,37 @@
+#QUESTION : /*Create a simple function that adds 1000 to a given input in SQL server*/
+
+SQL Server Functions are useful objects in SQL Server databases. 
+A SQL Server function is a code snippet that can be executed on a SQL Server. 
+It could be a user-defined function (created by the user) or a system defined function ( i.e built-in database functions). 
+
+SQL Server user-defined functions are routines that accept parameters, perform an action, 
+such as a complex calculation, and return the result of that action as a value. 
+The return value can either be a single scalar value or a result set.
+
+Benefits
+1. Reusability in SQL Queries
+2. Faster Execution
+3. Reduce Netork traffic
+
+In answering the above question, I created a function called dbo.add1000 which accepts integer as an input and returned that integer plus 1000.
+
+CREATE FUNCTION dbo.Add1000 (@var INT)
+RETURNS INT AS
+BEGIN
+	RETURN @var + 1000
+END
+GO
+
+
+-- Select the function with 200 as parameter, this should return 1200
+SELECT dbo.Add1000(200)
+GO
+
+
+#Cavaet: Keep #learning as this is not exhaustive.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

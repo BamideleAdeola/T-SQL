@@ -1,0 +1,35 @@
+#QUESTION : /*Create a function that computes dynamic percentage increase to total votes field in the voters table*/
+
+As a follow up in the previous post about user-defined functions in #SQL, you can also create a function to return a column based on the condition set in the block areas of the function
+
+Here, I have created a dynamic function that accepts two parameters: 
+a. A column
+b. A percent
+
+Within the function block, I have also passed the required computation or calculation, This is seen in 
+
+RETURN @votes + (@votes * @Percent)/100 where @votes represent the column total_votes of the voters table and @percent can be dynamically inserted.
+
+
+CREATE FUNCTION dbo.votesfn (@votes INT, @Percent INT)
+RETURNS INT AS
+BEGIN
+	RETURN @votes + (@votes * @Percent)/100
+END
+GO
+
+-- To confirm if this works, I have also inputed 10 and 5 as input parameters
+SELECT * , 
+  dbo.votesfn(total_votes, 10) AS Ten_Percent_Add, 
+  dbo.votesfn(total_votes, 5) AS Five_Percent_Add 
+FROM voters
+GO
+
+Also note that the data is a fictitious data.
+#Cavaet: Keep #learning as this is not exhaustive.
+If you find it useful, kindly #follow, #like, #share and #comment 
+#RDBMS: #SQL #Server
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
