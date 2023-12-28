@@ -40,11 +40,10 @@ ORDER BY
 	ir.NumberOfIncidents DESC;
 
 
--- BLANK OVER CLAUSE
+-- Running a BLANK OVER CLAUSE
 SELECT
 	ir.IncidentDate,
 	ir.NumberOfIncidents,
-    -- Fill in the correct aggregate functions
     -- You do not need to fill in the OVER clause
 	SUM(ir.NumberOfIncidents) OVER () AS SumOfIncidents,
 	MIN(ir.NumberOfIncidents) OVER () AS LowestNumberOfIncidents,
