@@ -5,7 +5,7 @@ Remove previous data and load the new dataset*/
 TRUNCATE TABLE dbo.eurovis;
 GO
  
--- import the file
+-- Import a CSV from my download file
 BULK INSERT dbo.eurovis
 FROM 'C:\Users\User\Downloads\eurovis.csv'
 WITH
