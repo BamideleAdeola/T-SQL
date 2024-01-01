@@ -1,6 +1,6 @@
 -- 2 --
 
--- AGGREGATION, STRINGS, GrOUPINGS
+-- AGGREGATION, STRINGS, GROUPINGS
 -------------------------------------------------------------------
 
 /* Q1 Obtain a grand total of the demand_loss_mw column by using the SUM function, and alias the result as MRO_demand_loss.
@@ -48,5 +48,5 @@ WHERE
   demand_loss_mw IS NOT NULL;
 
     -------------------------------------------------------------------
-  --  STRINGS
+  --  STRINGS --
   -------------------------------------------------------------------
