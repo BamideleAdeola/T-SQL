@@ -28,4 +28,6 @@ GO
 
 SELECT * FROM NbaPlayerStats;
 
+-- Creating a table
+
 
