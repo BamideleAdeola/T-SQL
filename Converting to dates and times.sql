@@ -64,7 +64,7 @@ This runs the risk of breaking every 32-bit device using POSIX time,
 which is the number of seconds elapsed since January 1, 1970 at midnight UTC.
 */
 
-
+--
 /*
 Build a DATETIMEOFFSET which represents the last millisecond before the Y2.038K problem hits. 
 The offset should be UTC.
