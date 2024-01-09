@@ -14,4 +14,4 @@ GO
 -- Querying the created view  
 SELECT FirstName, LastName, HireDate  
 FROM HumanResources.vvEmployeeHireDate  
-ORDER BY LastName; 
+ORDER BY LastName; -- order by clause
