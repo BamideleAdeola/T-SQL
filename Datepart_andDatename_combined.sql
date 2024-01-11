@@ -26,3 +26,4 @@ SELECT
 	DATENAME(SECOND, @mycurrentdate2) AS TheSecond,
 	DATENAME(NANOSECOND, @mycurrentdate2) AS TheNanosecond;
 GO
+--
