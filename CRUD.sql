@@ -6,7 +6,7 @@
 
 /*-- Q1
 Create a table named 'results' with 3 VARCHAR columns called track, artist, and album,
-with lengths 200, 120, and 160, respectively.*/
+with lengths 200, 120, and 160, respectively.....*/
 
 -- Create the table
 Create TABLE results (
