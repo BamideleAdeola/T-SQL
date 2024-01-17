@@ -9,3 +9,5 @@ FROM ratings
 WHERE 1 = 0;		-- This removes every data on the ratings table
 
 SELECT * FROM blank_table;
+
+--Creating a table without data 
