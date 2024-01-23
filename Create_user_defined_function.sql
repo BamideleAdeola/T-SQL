@@ -8,7 +8,7 @@ BEGIN
 END
 GO
 
-
+--
 -- Select the function with 200 as parameter, this should return 1200
 
 SELECT dbo.Add1000(200)
