@@ -4,7 +4,7 @@
 /*
 Can be used multiple times
 It makes codes easier to read
-It allows for removal of tautology. 
+It allows for removal of tautology. Yes to avoid it
 
 */
 --Create a CTE to retrieve Maximum Blood Pressure per Age
