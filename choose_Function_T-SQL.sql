@@ -1,4 +1,6 @@
 USE AdventureWorks2019;
+
+-- 
 GO
 -- Confirming if today is a weekend or weekday
 SELECT GETDATE() AS Today,
