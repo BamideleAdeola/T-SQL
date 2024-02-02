@@ -8,4 +8,4 @@ SELECT first_name, CHARINDEX('a' , first_name) AS position_of_a
 FROM voters
 where CHARINDEX('a' , first_name) != 0;
 
-
+--
