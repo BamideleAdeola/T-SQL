@@ -1,5 +1,5 @@
 
-/*Create a scalar function that adds 1000 to a given input in SQL server*/
+/*Create a scalar function that adds 1000 to a given input in SQL server*xxx/
 
 CREATE FUNCTION dbo.Add1000 (@var INT)
 RETURNS INT AS
