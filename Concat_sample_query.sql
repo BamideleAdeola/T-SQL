@@ -13,4 +13,4 @@ FROM voters;
 --QUERY 2		-- using CONCAT and SUBSTRING
 SELECT
  CONCAT(first_name,' (', SUBSTRING(last_name, 1,1), ')')
-FROM voters;
+FROM voters;--
