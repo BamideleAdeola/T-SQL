@@ -3,7 +3,7 @@
 							----------------------------------
 /*
 Create dates from component parts in the calendar table: calendar year, calendar month, and the day of the month.
-*/
+...*/
 
 -- Create dates from component parts on the calendar table
 SELECT TOP(10)
