@@ -52,5 +52,5 @@ SELECT
 FROM dbo.IncidentRollup ir
 WHERE
 	ir.IncidentDate BETWEEN '2019-07-01' AND '2019-07-31'
-AND ir.IncidentTypeID = 3;
+AND ir.IncidentTypeID = 3; --
 
