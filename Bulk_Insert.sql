@@ -15,4 +15,4 @@ WITH
 )
 GO
 
-SELECT * FROM dbo.eurovis;
+SELECT * FROM dbo.eurovis; --
