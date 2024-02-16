@@ -1,5 +1,5 @@
 							----------------------------------
-					--AGGREGATION FUNCTIONS OVER WINDOWS
+						--AGGREGATION FUNCTIONS OVER WINDOWS.
 							----------------------------------
 /*
 4 window ranking functions..
