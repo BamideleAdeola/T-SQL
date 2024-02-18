@@ -6,7 +6,7 @@
 /* Q1 Obtain a grand total of the demand_loss_mw column by using the SUM function, and alias the result as MRO_demand_loss.
 Only retrieve rows WHERE demand_loss_mw is not NULL and nerc_region is 'MRO'.*/
 
--- Sum the demand_loss_mw column
+-- Sum the demand_loss_mw column--
 SELECT 
   SUM(demand_loss_mw) AS MRO_demand_loss 
 FROM 
