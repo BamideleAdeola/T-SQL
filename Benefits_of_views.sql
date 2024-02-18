@@ -1,4 +1,4 @@
- /* Create a view to store matches played in 2011 */
+ /* Create a view to store matches played in 2011 */..
 
   CREATE VIEW Matches_2011 AS
   SELECT * FROM eurovis
