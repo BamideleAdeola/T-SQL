@@ -4,7 +4,7 @@
 /*
 4 window ranking functions..
 
-1. ROW_NUMBER() - Unique ascending integer starting from 1
+1. ROW_NUMBER() - Unique ascending integer starting from 1..
 
 
 2. RANK() - Ascending integer value from 1. Can have ties and can skip numbers.
