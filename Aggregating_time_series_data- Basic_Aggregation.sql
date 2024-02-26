@@ -2,7 +2,7 @@
 							    --BASIC AGGREGATE FUNCTION 
 							----------------------------------
 /*
-There are two(2) counting finction
+There are two(2) counting finction...
 
 COUNT() - Returns an integer
 COUNT_BIG() - Returns a 64-bit integer or BIGINT
