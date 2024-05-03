@@ -2,7 +2,7 @@
 						--AGGREGATION FUNCTIONS OVER WINDOWS...
 							----------------------------------
 /*
-4 window ranking functions..
+4 window ranking functions.....
 
 1. ROW_NUMBER() - Unique ascending integer starting from 1
 
